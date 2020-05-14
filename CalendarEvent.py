@@ -14,9 +14,12 @@ class CalendarEvent:
     """ Object that stores all neccessary information to create a Google Calendar Event
 
     Attributes:
-        date: Stores the date of the event as a datetime.date object
-        start_date_time: Stores the starting date and time as a datetime.datetime object
-
+        date
+        start_date_time
+        end_date_time
+        summary: a.k.a Title
+        description
+        location
     """
 
     def __init__(self, date, full_shift, summary='Work', description='Scheduled work hours', location='Carlow'):
@@ -103,5 +106,5 @@ for work_hours in work_hours_monthly:
         calendar_events.append(event)
     current_running_date += datetime.timedelta(days=1)
 
-for event in calendar_events[0:5]:
+for event in calendar_events:
     create_event(event)

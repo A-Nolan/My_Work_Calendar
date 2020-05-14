@@ -27,12 +27,13 @@ calendar_id = result["items"][0]["id"]
 result = service.events().list(calendarId=calendar_id).execute()
 
 def create_event(my_event):
-    #match = list(datefinder.find_dates(start_time))
-    #start = match[0].strftime("%Y-%m-%dT%H:%M:%S")
-    print("Created Event for " + str(my_event.date)) # str(match[0])[0:10])
-    
-    #match = list(datefinder.find_dates(end_time))
-    #end = match[0].strftime("%Y-%m-%dT%H:%M:%S")
+    """
+    Create a Google Calendar Event
+
+    Args:
+        my_event: CalendarEvent object
+    """
+    print("Created Event for " + str(my_event.date))
 
     event = {
         "summary": my_event.summary,
